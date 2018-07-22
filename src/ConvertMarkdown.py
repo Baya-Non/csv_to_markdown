@@ -20,6 +20,8 @@ def write_out(data):
 	w_filename = 'text1.txt' #書き込みファイル名の指定(任意)
 	row = get_row(data) #rowlength
 	col = get_col(data) #collength
+
+	#print(col)
 	str_bar = "|"
 	str_n = " \n "
 	bar = "---|"
@@ -29,8 +31,8 @@ def write_out(data):
 
 	str_f = 0
 	
-	f = open('text1.txt', 'w',encoding="utf-8") #exportfilename
-	for i in range(0,row):
+	f = open('text2.txt', 'w',encoding="utf-8") #exportfilename
+	for i in range(0,int(row)):
 		str_w = str_bar
 		f.writelines(str_w)
 
@@ -38,6 +40,7 @@ def write_out(data):
 			for i in range(0,col):
 				f.write(bar)
 			f.write("\n")
+			i = 1
 
 			str_w = str_bar
 			f.writelines(str_w)
@@ -56,5 +59,5 @@ def write_out(data):
 if __name__ == '__main__':
 	data = file_read()
 	write_out(data)
-
+	print("success!")
 	
